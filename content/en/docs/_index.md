@@ -1,6 +1,6 @@
 ---
-title: "ModernApps Ninja New Course Template"
-linkTitle: "New Course Template"
+title: "ModernApps Learning Guide Template"
+linkTitle: "Learning Guide Template"
 weight: 20
 menu:
   main:

@@ -1,15 +1,15 @@
 ---
 ## This Document Provides the Front Matter and Metadata for the Course Information page used in the modernapps.ninja homepage and the member profile page.
 ### Hugo Template Metadata
-title: "vSphere with Tanzu 301"
-date: "2021-02-25T00:41:40Z"
+title: "ModernApps Learning Guide Template"
+date: "2021-04-08T18:12:23Z"
 draft: true
 # meta description
-description: "Technical introduction to vSphere with Tanzu - Level 301"
+description: "Standard One-page Docsy-based Template for ModernApps by Tanzu Guides"
 # course thumbnail
-image: "https://modernapps.ninja/vSphereTanzu301_vt4163/admin/assets/images/vSphereTanzu301_vt4163.jpg"
+image: "https://modernapps.ninja/learningguidetemplate_mt4222/admin/assets/images/learningguidetemplate_mt4222.jpg"
 # taxonomy
-tags: ["Tanzu Portfolio"]
+tags: ["Tanzu Portfiolio"]
 # teacher
 teacher: "Ninja Admins"
 # duration
@@ -17,12 +17,12 @@ duration: "0 Hours"
 # course fee
 fee: "Free!"
 # apply url
-apply_url: "https://modernapps.github.io/vSphereTanzu301_vt4163"
+apply_url: "https://modernapps.github.io/learningguidetemplate_mt4222"
 # type
 type: "course"
 ### Extended Ninja Course Metadata
-content_id: vt4163
-course_short_title: vSphereTanzu301
-course_navbar_title: vSphere with Tanzu 301
-course_repo_name: vSphereTanzu301_vt4163
----
+content_id: mt4222
+course_short_title: learningguidetemplate
+course_navbar_title: Learning Guide Template
+course_repo_name: learningguidetemplate_mt4222
+---  
