@@ -271,7 +271,7 @@ jobs:
           cat /tmp/guide_repo_create_curl_response.json
       - name: set repository name for source template to be copied as source_repo_name
         run: |
-          echo source_repo_name=guide_repo_template_ct8279 >> $GITHUB_ENV
+          echo source_repo_name=learningguidetemplate_mt4222 >> $GITHUB_ENV
       - name: clone ninja_guide_template
         run: |
           git clone https://${{ secrets.NINJABOTGURU }}:x-oauth-basic@github.com/modernappsninja/${{ env.source_repo_name }}.git
