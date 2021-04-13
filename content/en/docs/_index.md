@@ -1,6 +1,6 @@
 ---
-title: "ModernApps by VMware Learning Guide Template"
-linkTitle: "ModernApps by VMware Learning Guide Template"
+title: "ModernApps by VMware Tanzu Learning Guide Template"
+linkTitle: "ModernApps Learning Guide Template"
 weight: 20
 menu:
   main:
