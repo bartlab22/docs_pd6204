@@ -1,0 +1,28 @@
+---
+## This Document Provides the Front Matter and Metadata for the Course Information page used in the modernapps.ninja homepage and the member profile page.
+### Hugo Template Metadata
+title: "Tanzu Standard Getting Started Guide"
+date: "2021-04-02T05:24:46Z"
+draft: true
+# meta description
+description: "Quick Start Guide for Getting Started with VMware Tanzu Standard"
+# course thumbnail
+image: "https://modernapps.ninja/tanzustandardgettingstarted_ts5887/admin/assets/images/tanzustandardgettingstarted_ts5887.jpg"
+# taxonomy
+tags: ["Tanzu Portfiolio"]
+# teacher
+teacher: "Ninja Admins"
+# duration
+duration: "0 Hours"
+# course fee
+fee: "Free!"
+# apply url
+apply_url: "https://modernapps.github.io/tanzustandardgettingstarted_ts5887"
+# type
+type: "course"
+### Extended Ninja Course Metadata
+content_id: ts5887
+course_short_title: tanzustandardgettingstarted
+course_navbar_title: Tanzu Standard Getting Started Guide
+course_repo_name: tanzustandardgettingstarted_ts5887
+---  
