@@ -1,6 +1,6 @@
 ---
-title: "ModernApps by VMware Tanzu Learning Guide Template"
-linkTitle: "ModernApps Learning Guide Template"
+title: "ModernApps Learning Platform Documentation"
+linkTitle: "Docs"
 weight: 20
 menu:
   main:
