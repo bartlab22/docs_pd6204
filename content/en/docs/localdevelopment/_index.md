@@ -18,6 +18,7 @@ menu:
   - [Step 5: Make and commit desired changes to the new branch](#step-5-make-and-commit-desired-changes-to-the-new-branch)
     - [Step 5A - Make desired updates](#step-5a---make-desired-updates)
       - [Using VSCode to cut and paste images](#using-vscode-to-cut-and-paste-images)
+      - [Create a document to upload to the guestbook directory](#create-a-document-to-upload-to-the-guestbook-directory)
   - [Step 6: Push your new branch to your fork on github.com](#step-6-push-your-new-branch-to-your-fork-on-githubcom)
   - [Step 7: Create pull request to submit your proposed changes](#step-7-create-pull-request-to-submit-your-proposed-changes)
 
@@ -201,23 +202,23 @@ Git provides several tools you can use to help ensure that git's version control
 
 **Important:** Your branch name does need to be unique in your fork, and you should be careful to not accidentally use a branch that already existed as you may accidentally include unintended updates in your commits. It is easy to make this mistake as its natural to use the same or similar names for temporary branches. So it is important to check what branches exist before creating one, deleting old branches after they are merged or closed, and I also append a random or semi-random number to temporary branch as an extra precaution to make sure I dont accidentally reuse an old branch that may still be waiting to merge or forgot to delete. One other consideration is that while branches are local to your fork, there may be times where you are working on a common fork with other people, so it is a good habit to include your username or something unique to you. 
 
-- From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the following commands - be careful to replace "MYGITHUBUSERNAME" with your gitub username:
+- From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the following commands - be careful to replace "YOURGITHUBUSERNAME" with your gitub username:
 
 ```bash
 # Enter the "git branch" command to review the names of current branches
 git branch
 # Enter the "git branch BRANCH_NAME" command to create a new branch
-git branch MYGITHUBUSERNAME_new_branch_1234
+git branch YOURGITHUBUSERNAME_new_branch_1234
 # Enter the "git branch" command to review the names of current branches and observe the new branch you created is listed
 git branch
 ## Note that there is an asterisk next to the "main" branch, indicating your local environment is still set to use the main branch ...
 ### this is because the "git branch BRANCH_NAME" will by default create a new branch but not switch your local context to use it
 # Enter the "git branch -d BRANCH_NAME" to delete the branch you just created
-git branch -d MYGITHUBUSERNAME_new_branch_1234
+git branch -d YOURGITHUBUSERNAME_new_branch_1234
 # Enter the "git branch" command to review the names of current branches and observe the new branch you created has been deleted
 git branch
 # Enter the command "git checkout -b BRANCH_NAME" which will both create a new branch and switch your local git clients context to use the new branch
-git checkout -b MYGITHUBUSERNAME_new_branch_4321
+git checkout -b YOURGITHUBUSERNAME_new_branch_4321
 # Enter the "git branch" command to and observe the new branch has been created and your local client is set to use it
 git branch
 ```
@@ -269,23 +270,31 @@ There are several extensions that use this second method, and it doesnt matter w
 ![](/docs_pd6204/docs/localdevelopment/2021-05-19-22-37-16.png)
 {{< exclose >}}
 
-**Important:** Different GitHub organizations and repositories have different standards for where images should be stored. The settings provided below will work for this example, however when you use the paste image extension to make updates outside of this example, it is important that you adjust the `Path` setting to save the image to the appropriate location for the repository you are updating, and update the `Insert Pattern` setting so that the image link pasted into the document accurately links to the location where the image is being saved. Within the ModernApps Learning GitHub Organization, we are working on having a consistent standard for how images are saved across all repositories, however this is still a work in progress, so it is important to look at the repo you want to update to determine where image files are stored for that repo.
+**Important:** Different GitHub organizations and repositories have different standards for where images should be stored. The settings provided below will work for this example, however when you use the paste image extension to make updates outside of this example, it is important that you adjust the `Path` setting to save the image to the appropriate location for the repository you are updating, and update the `Insert Pattern` setting so that the image link pasted into the document accurately links to the location where the save image will be served. Within the ModernApps Learning GitHub Organization, we are working on having a consistent standard for how images are saved across all repositories, however this is still a work in progress, so it is important to look at the repo you want to update to determine where image files are stored for that repo.
 
-- Update the paste image settings to match the following values. Leave any values not listed here set to their defaults:
+- Update the paste image settings to match the following values. Leave any values not listed here set to their defaults and **replace any references to "YOURLOWERCASEGITHUBUSERNAME" to your github username in all lower case letters**:
   - **Field Name:** `Paste Image to Markdown: Base Path`
     - **Field Value:** This field should be completely blank with no text. 
     - **Explanation:** By default this field populates variables intended to dynamically reflect an accurate path in the `Insert Pattern` field, but I have had a difficult time getting it to work consistently so I leave it blank and instead insert a static path into the `Insert Pattern` field as shown below. 
   - **Field Name:** `Paste Image to Markdown: Insert Pattern`
-    - **Field Value:** `${imageSyntaxPrefix}/docs_pd6204/docs/localdevelopment/${imageFileName}${imageSyntaxSuffix}`
-    - **Explanation:** This field provides the pasted link in the document to where the image will be saved, but does not define the location where the image will be saved. The imageSyntaxPrefix and suffix insert the required formatting to display images in markdown. The "/docs_pd6204/docs/localdevelopment/" is the local file directory the image is located in, and the imageFilename is a variable that will insert the dynamically generated name of the image file that gets created when you paste the image in the document. In the following steps in this example, you will be creating a document that will be saved as the only document in a folder, and the image will be saved within the same directory as the document. With this method where images are saved in the same folder as the document, you will need to update this setting every time you edit a different document to ensure the pasted image link accurately reflects where the image is stored. A key advantage of this method is that it keeps the images used in a document associated with that document, making the document portable and free from complicated dependencies such as dedicated image directories where it can be very difficult to tell which image is associated with which document.
+    - **Field Value:** {{< highlight-open "whitesmoke" >}}{{< nobr-open >}}${imageSyntaxPrefix}/docs_pd6204/admin/userdata/localdevelopment/guestbookdir/YOURLOWERCASEGITHUBUSERNAME/${imageFileName}${imageSyntaxSuffix}{{< nobr-close >}}{{< highlight-close >}}
+    - **Explanation:** This field provides the pasted link in the document to where the image will be served, but does not define the location where the image will be saved. The imageSyntaxPrefix and suffix insert the required formatting to display images in markdown. The "/docs_pd6204/docs/localdevelopment/" is the local file directory the image is located in, and the imageFilename is a variable that will insert the dynamically generated name of the image file that gets created when you paste the image in the document. In the following steps in this example, you will be creating a document that will be saved as the only document in a folder, and the image will be saved within the same directory as the document. With this method where images are saved in the same folder as the document, you will need to update this setting every time you edit a different document to ensure the pasted image link accurately reflects where the image is stored. A key advantage of this method is that it keeps the images used in a document associated with that document, making the document portable and free from complicated dependencies such as dedicated image directories where it can be very difficult to tell which image is associated with which document.
   - **Field Name:** `Paste Image to Markdown: Name Prefix`
     - **Field Value:** `/`
   - **Field Name:** `Paste Image to Markdown: Path`
     - **Field Value:** `${currentFileDir}`
     - **Explanation:** This field defines where the image will be saved in your local directory. When the `currentFileDir` variable is set as the `Path` value, the extension will save the image into the same directory as the document you are pasting the image into. If you need to save images in a different folder, update this field with the path to the folder where you want pasted images to be saved.
 
+##### Create a document to upload to the guestbook directory
 
+This example is designed to allow you to create and submit a file to allow you to walk through the entire local development process in a safe environment before you need to try using this method to update production assets.
 
+- From your shell command prompt, navigate to the following directory within your local copy of your fork: `/docs_pd6204/admin/userdata/localdevelopment/guestbookdir/`
+- Create a directory using the name of **your github username in lower case letters** with the command `mkdir YOURLOWERCASEGITHUBUSERNAME`
+
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-19-22-37-16.png)
+{{< exclose >}}
 
 
 
