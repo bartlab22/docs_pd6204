@@ -173,12 +173,13 @@ git checkout main
 git rebase upstream/main
 # the "git rebase upstream/main" command is a safer way to apply new updates fetched from the upstream repository to your ...
 ## locally downloaded fork. Sometimes people make changes locally and forget to upload them. "git rebase" works by taking any ...
-### changes you have made in your local repository to a temporary area, then updating your local branch to be in sync with the ...
+### changes you have made in your local repository to a temporary area, then updates your local branch to be in sync with the ...
 #### upstream branch, and then applies any changes you made locally to the updated main branch in the order you made them.
 ##### This helps to prevent merge conflicts, and in the case there is a merge conflict, it will notify you and allow you to
 ###### fix the merge conflict locally before you submit your update to help ensure your update gets approved quickly with desired results.
 ####### In this case you have not yet made changes, but after you do make changes it is a best practice to do the fetch/rebase operation ...
 ######## just before you push your branch to github, so you can be aware of and potentially resolve merge conflicts before uploading.
+######### In the event you have any problems with the locally downloaded copy of your fork, you can delete and then redownload the fork by repeating step 2.
 ```
 
 {{< exopen "Click to expand screenshot for this action" >}}
@@ -288,15 +289,27 @@ There are several extensions that use this second method, and it doesnt matter w
 
 ##### Create a document to upload to the guestbook directory
 
+**IMPORTANT:** You can customize the text you put in this file, but be careful to only submit text or images that are business professional and do not include anything that is potentially offensive. The ModernApps Learning community embraces all people around the world regardless of their race, culture, gender identity, orientation or any other attribute. Be careful not to include any content that is derogatory or that may make anyone uncomfortable or you could be warned and possibly subject to removal from the community in extreme cases.
+
 This example is designed to allow you to create and submit a file to allow you to walk through the entire local development process in a safe environment before you need to try using this method to update production assets.
 
-- From your shell command prompt, navigate to the following directory within your local copy of your fork: `/docs_pd6204/static/admin/userdata/localdevelopment/guestbookdir/`
+- From your shell command prompt, navigate to the following directory within your local copy of your fork: `/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`
+  - Observe that this directory path includes the folders "/content/en" which is not included in the `Insert Pattern` setting in the `Paste Image to Markdown` extension. this is because while the image is saved to your current directory, 
   - Create a directory using the name of **your github username in lower case letters** with the command `mkdir YOURLOWERCASEGITHUBUSERNAME`
   - Navigate to the new directory with the command `cd YOURLOWERCASEGITHUBUSERNAME`
   - Create a file with vscode using the name of **your github username in lower case letters** and the `.md` extension with the command `code YOURLOWERCASEGITHUBUSERNAME.md`
+  - Observe that VSCode opened the new file you created in the previous command in its editor window
 
 {{< exopen "Click to expand screenshot for this action" >}}
-![](/docs_pd6204/docs/localdevelopment/2021-05-19-22-37-16.png)
+![](/docs_pd6204/docs/localdevelopment/2021-05-20-02-13-16.png)
+{{< exclose >}}
+
+- Using the VSCode editor, on the first line of the new file enter the text "Hello World"
+- Expand one of the images in this document or another appropriate image, right click it and select `copy image`
+- Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. This will past the link where the image file will be served in the document, and save the image file to the directory you defined in the paste image settings, `/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`
+
+{{< exopen "Click to expand if your image did not paste correctly" >}}
+If you did not see a link to the image get pasted in your document, or if you do not see the image file in 
 {{< exclose >}}
 
 
