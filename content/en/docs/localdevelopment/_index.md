@@ -19,6 +19,8 @@ menu:
     - [Step 5A - Make desired updates](#step-5a---make-desired-updates)
       - [Using VSCode to cut and paste images](#using-vscode-to-cut-and-paste-images)
       - [Create a document to upload to the guestbook directory](#create-a-document-to-upload-to-the-guestbook-directory)
+      - [Validate your updates prior to committing](#validate-your-updates-prior-to-committing)
+    - [Step 5B - Commit your updates](#step-5b---commit-your-updates)
   - [Step 6: Push your new branch to your fork on github.com](#step-6-push-your-new-branch-to-your-fork-on-githubcom)
   - [Step 7: Create pull request to submit your proposed changes](#step-7-create-pull-request-to-submit-your-proposed-changes)
 
@@ -317,23 +319,40 @@ If you did not see a link to the image get pasted in your document, or if you do
 - **Possible Issue:** The link to the image was pasted in the document, but you do not see the image file itself. It is possible image file was saved in different directory than you were expecting and so you do not see it, caused by a misconfiguration of the `Paste Image to Markdown: Path` setting
   - **Solution** In the VSCode file browser, right click the local directory for your fork, select `Find in Folder`, and search for the filename of the image you can find in the link that was pasted into the document. If you find the image in a different location than you expected, adjust the `Paste Image to Markdown: Path` setting until the issue is corrected. 
 - **Possible Issue:** The image was saved as expected in your directory, but the link that was pasted in the document does not seem to match the location of the image
-  - **Solution** Keep in mind that the location where the image is saved is not the same as the location where the image will be served from. The [Hugo static site generator] will copy the image to a different location to be served on the generated modernapps.ninja/GitHub Pages website for the repo, so the saved image path and the link to the image in the document should not match exactly. If there is a different problem with the pasted link to the image in the document, adjust the `Paste Image to Markdown: Insert Pattern` setting until the issue is corrected. 
- 
-{{< exclose >}}
+  - **Solution** Proceed to the next section in this step where you can validate the image link by doing a local hugo build. Keep in mind that the location where the image is saved is not the same as the location where the image will be served from. The [Hugo static site generator] will copy the image to a different location to be served on the generated modernapps.ninja/GitHub Pages website for the repo, so the saved image path and the link to the image in the document should not match exactly. If there is a different problem with the pasted link to the image in the document, adjust the `Paste Image to Markdown: Insert Pattern` setting until the issue is corrected. 
+ {{< exclose >}}
 
+##### Validate your updates prior to committing
 
+Most updates made to ModernApps Learning repositories are related to content that is displayed on a web page that is dynamically generated from markdown files where users edit content. If your desired updates are to a repository that serves a webpage, you wont be able to tell how the webpage will appear until your submitted updates are approved and Hugo builds updated versions of the webpages. When updates are merged into ModernApps Learning repositories, and automated workflow triggers hugo to build and post updated webpages that reflect the changes you made. It is usually desirable for you to be able to confirm how your updates will appear before you commit and submit updates to GitHub. 
+
+If you have installed hugo in your local shell, it is very easy to have hugo serve the rendered webpages in a special developer mode where every time you save changes to a file, hugo automatically generates and serves updated webpages locally on your workstation. 
+
+- From your shell command prompt, navigate to the root directory of your forked repository and enter the command `hugo server`, and hugo will start a web server on your localhost to serve a local build of the repositories webpages, and return a link to the address where you can view the local build. 
+
+#### Step 5B - Commit your updates
 
 A git commit is another tool to help prevent merge conflicts and ensure smooth operations. Any time you edit or add a file to a git repository, after you save the file, you then will use the `git add` and `git commit` commands, and git will save identifiers in version control so that it knows what changes you have made relative to the exact state of the file or repository when you made the change. 
 
-One key benefit of commits is for use cases where it makes sense to group several related small updates into a common pull request. 
-
-When you make a commit, git makes a record of any changes you have made to any file(s) that you include in the commit. Git is already aware of the exact state of the file before you made any changes, and the commit keeps track of the exact changes you made.
+- From your shell command prompt, navigate to the root directory of your forked repository and enter the following commands to commit your updates:
+  - # use the "git add" command to add your updated files to the staging area in your local context to mark them as ready for the next commit
+  - `git add .` 
+  - # enter the "git commit -m" command with a descriptive message about the update your are submitting
+  - `git commit -m "Adding file to the localdevelopment guestbook directory to complete lab exercise"`
 
 
 ### Step 6: Push your new branch to your fork on github.com
 
+Now that you have committed your updates locally, you can push the updates to your forked repository on github. While you will open a pull request to submit your changes to the upstream repository, since you are the owner of your own fork, you are allowed to push updates to your fork. After you push your updates to your fork on github, you can submit a pull request through the browser. 
+
+- From your shell command prompt, navigate to the root directory of your forked repository, enter the command `git branch` to verify the name, spelling and capitalization of your branch name. Next enter `git push YOURGITHUBUSERNAME_new_branch_4321` being sure to replace the value YOURGITHUBUSERNAME with your own github username. 
+
 ### Step 7: Create pull request to submit your proposed changes
 
+
+In a browser, navigate to the github.com webpage for your fork of the upstream repository. On the home page, a text alert will display that you have made changes and promtp you to open a pull request to submit your changes, and you can follow the prompts to open a pull request in the browser, using the exact sequence used in the ModernApps Skills 101 course and all of the other courses that are hosted on GitHub. 
+
+**This completes the exercise"
 
 
 
