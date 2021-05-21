@@ -82,46 +82,46 @@ This exercise is designed for you to follow along and execute each step as instr
 
 ### Step 1: Forking the upstream repository
 
-- Open a browser to [https://github.com](https://github.com) and login
-- Navigate to the ModernApps Learning Docs site at [https://github.com/ModernAppsNinja/docs_pd6204](https://github.com/ModernAppsNinja/docs_pd6204)
-- On the upper right hand corner of the browser, click the `Fork` button
+- **Action:**
+  - Open a browser to [https://github.com](https://github.com) and login
+  - Navigate to the ModernApps Learning Docs site at [https://github.com/ModernAppsNinja/docs_pd6204](https://github.com/ModernAppsNinja/docs_pd6204)
+  - On the upper right hand corner of the browser, click the `Fork` button
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-17-23-42-37.png)
 {{< exclose >}}
 
-- If prompted, select the account or organization you would like your fork located. Select your Github account name.
-  - Note: You may not be prompted if you are only an admin/owner of a single account or organization, if you are not prompted to select a repository, you can skip this item and proceed to the next substep below. 
+- **Action:** If prompted, select the account or organization you would like your fork located. Select your Github account name.
+  - **Note:** You may not be prompted if you are only an admin/owner of a single account or organization, if you are not prompted to select a repository, you can skip this item and proceed to the next substep below. 
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-17-23-50-40.png)
 {{< exclose >}}
 
-- Your browser should automatically direct you to the GitHub webpage for your forked copy of the ModernAppsNinja/docs_pd6204 repository.
+- **Action:** Your browser should automatically direct you to the GitHub webpage for your forked copy of the ModernAppsNinja/docs_pd6204 repository.
 
 {{< exopen "Click to expand screenshot for this action" >}}  
 ![](/docs_pd6204/docs/localdevelopment/2021-05-18-00-19-19.png)
 {{< exclose >}}
 
-- Expand the screenshot image above of the example github homepage for your forked repository and review the highlighted items:
+- **Action:** Expand the screenshot image above of the example github homepage for your forked repository and review the highlighted items:
   - Item 1 displays the name of your account and repository, and shows which upstream repository your forked repository was created from.
   - Item 2 displays the branch you are currently viewing.
   - Item 3 provides a message that displays if your repository is in sync with the upstream repo, and will indicate if there are differences between your fork and the upstream repo.
   - Item 4 - the `Contribute` pulldown provides a simple way to open a pull request if your repository has differences from the upstream repo.
   - Item 5 - the `Fetch Upstream` pulldown allows you to manually trigger a check to determine if there are differences between your fork and the upstream repo
 
-**Your fork has now been created, please proceed to the next step.**
-
 ### Step 2: Cloning your forked repository
 
 **Important:** To clone your forked repository, you will need to execute CLI commands from Bash or another command shell on your workstation. When you clone your repository, it will download the repository files into a folder in the directory that you execute the clone command from. Before you clone your forked repository, be sure to create and navigate to a directory on your workstation where you would like to download it. You can create or use any standard directory on your workstation to save your downloaded repository.
 
-- Open a web browser to the GitHub webpage for your fork
-- Click the `Clone` button and observe that 3 options are provided: `Https`, `SSH`, and `GitHub CLI`
-  - The `HTTPS` option provides the URL you can use to clone the repository using the HTTPS protocol. 
-  - The `SSH` option provides the SSH address you can use to clone the repository using the  protocol.
-    - for both the `HTTPS` and `SSH` options github only provides the address for the repository and not the full command you would need to execute the clone operation. If you select one of these options you will need to enter the command `git clone` followed by the HTTPS URL or SSH address from Bash (or other command shell) on your workstation.
-  - The `GitHub CLI` option provides the entire command to clone the repository so you can simply copy and paste this command in your shell. This option requires that you have the GitHub CLI installed and configured on your workstation.
+- **Action:**
+  - Open a web browser to the GitHub webpage for your fork
+  - Click the `Clone` button and observe that 3 options are provided: `Https`, `SSH`, and `GitHub CLI`
+    - The `HTTPS` option provides the URL you can use to clone the repository using the HTTPS protocol. 
+    - The `SSH` option provides the SSH address you can use to clone the repository using the  protocol.
+      - for both the `HTTPS` and `SSH` options github only provides the address for the repository and not the full command you would need to execute the clone operation. If you select one of these options you will need to enter the command `git clone` followed by the HTTPS URL or SSH address from Bash (or other command shell) on your workstation.
+    - The `GitHub CLI` option provides the entire command to clone the repository so you can simply copy and paste this command in your shell. This option requires that you have the GitHub CLI installed and configured on your workstation.
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-18-01-36-08.png)
@@ -129,7 +129,7 @@ This exercise is designed for you to follow along and execute each step as instr
 
 **Note:** While you can use any of these 3 options to clone your forked repo, this example will use GitHub CLI to execute the clone operation. 
 
-- Copy the `GitHub CLI` command, paste it in your bash prompt and press enter. This will create a new folder with the name and content of the repository you cloned, in this example the name of the folder is docs_pd6204. In your command prompt, navigate to the new directory. 
+- **Action:** Copy the `GitHub CLI` command, paste it in your bash prompt and press enter. This will create a new folder with the name and content of the repository you cloned, in this example the name of the folder is docs_pd6204. In your command prompt, navigate to the new directory. 
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-18-02-10-17.png)
@@ -143,7 +143,7 @@ In some versions of the git client, when you clone a forked repository, your loc
 
 In this step you will review your git config and if needed update your git config file with the address of the upstream repository. Next you will fetch any updates from the upstream repo to ensure your local git client has the latest updates, and then rebase your local fork to use the upstream repo. 
 
-- From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the command `cat .git/config` to display your git config file. Ensure your git config file has a section for `remote "upstream"` set to the https or ssh address for the upstream repo, as shown in the image below. 
+- **Action:** From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the command `cat .git/config` to display your git config file. Ensure your git config file has a section for `remote "upstream"` set to the https or ssh address for the upstream repo, as shown in the image below. 
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-18-02-55-43.png)
@@ -151,12 +151,13 @@ In this step you will review your git config and if needed update your git confi
 
 {{< exopen "If your git config file did not have an upstream repo click here to see instructions to configure it" >}}
 
-- In a web browser navigate to the github webpage for the upstream repository [https://github.com/ModernAppsNinja/docs_pd6204](https://github.com/ModernAppsNinja/docs_pd6204)
-- Click the `Clone` button, select the `HTTPS` option and copy the URL for the repository
+- **Action:**
+  - In a web browser navigate to the github webpage for the upstream repository [https://github.com/ModernAppsNinja/docs_pd6204](https://github.com/ModernAppsNinja/docs_pd6204)
+  - Click the `Clone` button, select the `HTTPS` option and copy the URL for the repository
 
 ![](/docs_pd6204/docs/localdevelopment/2021-05-18-02-22-42.png)
 
-- From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the following command to update your git config with the address of the upstream repository:
+- **Action:** From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the following command to update your git config with the address of the upstream repository:
 
 ```bash
 git remote add upstream https://github.com/ModernAppsNinja/docs_pd6204.git
@@ -165,7 +166,7 @@ git remote add upstream https://github.com/ModernAppsNinja/docs_pd6204.git
 **Your git config file has now been configured to connect to the upstream respository**
 {{< exclose >}}
 
-- Enter the following commands to fetch the latest updates from the upstream repo and rebase your local fork to align with the upstream:
+- **Action:** Enter the following commands to fetch the latest updates from the upstream repo and rebase your local fork to align with the upstream:
 
 ```bash
 git fetch upstream
@@ -174,15 +175,10 @@ git checkout main
 # the "git checkout main" command ensures your local environment is set to use the main branch
 git rebase upstream/main
 # the "git rebase upstream/main" command is a safer way to apply new updates fetched from the upstream repository to your ...
-## locally downloaded fork. Sometimes people make changes locally and forget to upload them. "git rebase" works by taking any ...
-### changes you have made in your local repository to a temporary area, then updates your local branch to be in sync with the ...
-#### upstream branch, and then applies any changes you made locally to the updated main branch in the order you made them.
-##### This helps to prevent merge conflicts, and in the case there is a merge conflict, it will notify you and allow you to
-###### fix the merge conflict locally before you submit your update to help ensure your update gets approved quickly with desired results.
-####### In this case you have not yet made changes, but after you do make changes it is a best practice to do the fetch/rebase operation ...
-######## just before you push your branch to github, so you can be aware of and potentially resolve merge conflicts before uploading.
-######### In the event you have any problems with the locally downloaded copy of your fork, you can delete and then redownload the fork by repeating step 2.
+## locally downloaded fork. 
 ```
+
+**Note** The [`git rebase`]() command works by taking any changes you have made in your local repository to a temporary area, then updates your local branch to be in sync with the upstream branch, and then applies any changes you made locally to the updated main branch in the order you made them. This helps to prevent merge conflicts, and in the case there is a merge conflict, it will notify you and allow you to fix the merge conflict locally before you submit your update to help ensure your update gets approved quickly with desired results. In the event you have any problems with the locally downloaded copy of your fork, you can delete and then redownload the fork by repeating step 2.
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-18-10-24-51.png)
@@ -205,7 +201,7 @@ Git provides several tools you can use to help ensure that git's version control
 
 **Important:** Your branch name does need to be unique in your fork, and you should be careful to not accidentally use a branch that already existed as you may accidentally include unintended updates in your commits. It is easy to make this mistake as its natural to use the same or similar names for temporary branches. So it is important to check what branches exist before creating one, deleting old branches after they are merged or closed, and I also append a random or semi-random number to temporary branch as an extra precaution to make sure I dont accidentally reuse an old branch that may still be waiting to merge or forgot to delete. One other consideration is that while branches are local to your fork, there may be times where you are working on a common fork with other people, so it is a good habit to include your username or something unique to you. 
 
-- From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the following commands - be careful to replace "YOURGITHUBUSERNAME" with your gitub username:
+- **Action:** From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the following commands - be careful to replace "YOURGITHUBUSERNAME" with your gitub username:
 
 ```bash
 # Enter the "git branch" command to review the names of current branches
@@ -253,21 +249,22 @@ In this document and for all content posted to repositories in the ModernApps Le
 
 There are several extensions that use this second method, and it doesnt matter which of the available extensions you use so long as it saves the image file locally within the target repository. I will recommend and use a specific extension in these instructions, but I have found that different extensions work better with different operating systems, so if you have any problems with the image cut/paste extension used in these instructions, you can search the VSCode extension directory and try an alternative extension. Also note that the act of taking a screen capture may not work well out-of-the-box with many linux distributions, so I use the [Shutter screenshot tool](https://shutter-project.org/) on Linux to take screen captures which is not required but may be useful if you have any challenges making screen captures.
 
-- Open VSCode and navigate to the `Extensions` sidebar. In the search box enter "paste image to markdown" and then scroll through the results until you see "Paste Image to Markdown" from the developer "Liu-Yongle"
+- **Action:** Open VSCode and navigate to the `Extensions` sidebar. In the search box enter "paste image to markdown" and then scroll through the results until you see "Paste Image to Markdown" from the developer "Liu-Yong"
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-19-21-45-24.png)
 {{< exclose >}}
 
-- Click on the "Paste Image to Markdown" extension and select install. After it finishes installing, click the reload option if VSCode prompts you to reload, and then click on the settings gear icon for the extension.
+- **Action:** Click on the "Paste Image to Markdown" extension and select install. After it finishes installing, click the reload option if VSCode prompts you to reload, and then click on the settings gear icon for the extension.
 
 {{< exopen "Click to expand screenshot for this action" >}}
 **Note:** The image below shows the option to uninstall the extension, because it is already installed in my environment. If the extension has not yet been installed in your environment, it will show you the option to install in the same place as the uninstall option in the image below.
 ![](/docs_pd6204/docs/localdevelopment/2021-05-19-22-07-59.png)
 {{< exclose >}}
 
-- After you click on extension settings, VSCode will bring you to the main settings menu, and you will need to navigate to the specific settings for the "Paste Image to Markdown" extension. 
-- On the settings menu, click the arrow next to `Extensions` to expand the list of extensions that are installed, and then click on the "Paste Image Configuration"
+- **Action:**
+  - After you click on extension settings, VSCode will bring you to the main settings menu, and you will need to navigate to the specific settings for the "Paste Image to Markdown" extension. 
+  - On the settings menu, click the arrow next to `Extensions` to expand the list of extensions that are installed, and then click on the "Paste Image Configuration"
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-19-22-37-16.png)
@@ -275,7 +272,7 @@ There are several extensions that use this second method, and it doesnt matter w
 
 **Important:** Different GitHub organizations and repositories have different standards for where images should be stored. The settings provided below will work for this example, however when you use the paste image extension to make updates outside of this example, it is important that you adjust the `Path` setting to save the image to the appropriate location for the repository you are updating, and update the `Insert Pattern` setting so that the image link pasted into the document accurately links to the location where the save image will be served. Within the ModernApps Learning GitHub Organization, we are working on having a consistent standard for how images are saved across all repositories, however this is still a work in progress, so it is important to look at the repo you want to update to determine where image files are stored for that repo.
 
-- Update the paste image settings to match the following values. Leave any values not listed here set to their defaults:
+- **Action:** Update the paste image settings to match the following values. Leave any values not listed here set to their defaults:
   - **Field Name:** `Paste Image to Markdown: Base Path`
     - **Field Value:** This field should be completely blank with no text. 
     - **Explanation:** By default this field populates variables intended to dynamically reflect an accurate path in the `Insert Pattern` field, but I have had a difficult time getting it to work consistently so I leave it blank and instead insert a static path into the `Insert Pattern` field as shown below. 
@@ -295,7 +292,7 @@ There are several extensions that use this second method, and it doesnt matter w
 
 This example is designed to allow you to create and submit a file to allow you to walk through the entire local development process in a safe environment before you need to try using this method to update production assets.
 
-- From your shell command prompt, navigate to the following directory within your local copy of your fork: `/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`
+- **Action:** From your shell command prompt, navigate to the following directory within your local copy of your fork: {{< highlight-open "whitesmoke" >}}{{< nobr-open >}}`/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`{{< nobr-close >}}{{< highlight-close >}}
   - Observe that this directory path includes the folders "/content/en" which is not included in the `Insert Pattern` setting in the `Paste Image to Markdown` extension. this is because while the image is saved to your current directory, 
   - Create a directory using the name of **your github username in lower case letters** with the command `mkdir YOURLOWERCASEGITHUBUSERNAME`
   - Navigate to the new directory with the command `cd YOURLOWERCASEGITHUBUSERNAME`
@@ -306,33 +303,55 @@ This example is designed to allow you to create and submit a file to allow you t
 ![](/docs_pd6204/docs/localdevelopment/2021-05-20-02-13-16.png)
 {{< exclose >}}
 
-- Using the VSCode editor, on the first line of the new file enter the text "Hello World"
-- Expand one of the images in this document or another appropriate image, right click it and select `copy image`
-- Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. This will past the link where the image file will be served in the document, and save the image file to the directory you defined in the paste image settings, `/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`
+-  **Action:**
+   - Using the VSCode editor, on the first line of the new file enter the text "Hello World"
+   - Expand one of the images in this document or another appropriate image, right click it and select `copy image`
+   - Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. This will paste the link to where the image file will be served in the document, and save the image file to the directory you defined in the paste image settings, `/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`
 
 {{< exopen "Click to expand if your image did not paste correctly" >}}
 If you did not see a link to the image get pasted in your document, or if you do not see the image file being saved to its target location in your directory, please review the following list for resolutions to common problems.
 - **Possible Issue:** The keyboard shortcut used in this example might not work the same on your system
-  - **Solution** Place your mouse cursor at the location in the document where you want to paste the image link. Access the command palette for your VSCode environment, which by default can be accessed with the keyboard shortcut `ctrl + shift + p`. At the command palette prompt, type `Paste Image to Markdown`, which should bring up a command link that will paste them image when you click it. If there is an issue, a relevant error message may be displayed briefly in a popup window on the lower right hand corner of your monitor. 
-- **Possible Issue:** There is a problem with your systems copy/paste/clipboard functions for images and/or there is no image in the clipboard
-  - **Solution** Confirm that you can copy and paste images successfully by opening an application that you know supports pasting images, such as a word processing app like libreoffice or another app you know supports standard pasting of images and attempt to paste an image. If you are unable to paste an image in the other application, it indicates there is a problem with the ability to copy and paste images on your system and is not related to this course. I would recommend you look for support directly related to your operating system and workstation, and once you are able to get standard copy/paste functionality for images working on your system, resume this lab
-- **Possible Issue:** The link to the image was pasted in the document, but you do not see the image file itself. It is possible image file was saved in different directory than you were expecting and so you do not see it, caused by a misconfiguration of the `Paste Image to Markdown: Path` setting
+  - **Solution** Place your mouse cursor at the location in the document where you want to paste the image link. Access the command palette for your VSCode environment, which by default can be opened with the keyboard shortcut `ctrl + shift + p`. At the command palette prompt, type `Paste Image to Markdown`, which should bring up a command link that will paste them image when you click it. If there is an issue, a relevant error message may be displayed briefly in a popup window on the lower right hand corner of your monitor. 
+- **Possible Issue:** There is a problem with your workstations' copy/paste/clipboard functions for images and/or there is no image on the clipboard
+  - **Solution** Confirm that you can copy and paste images successfully by opening an application that you know supports pasting images, such as a word processing app like libreoffice or another app you know supports standard pasting of images, and attempt to paste an image. If you are unable to paste an image in the other application, it indicates there is a problem with the ability to copy and paste images on your system and is not related to this guide. I would recommend you look for support directly related to your operating system and workstation, and once you are able to get standard copy/paste functionality for images working on your system, resume this lab.
+- **Possible Issue:** The link to the image was pasted in the document, but you do not see the image file itself. It is possible the image file was saved in different directory than you were expecting and so you do not see it, caused by a misconfiguration of the `Paste Image to Markdown: Path` setting.
   - **Solution** In the VSCode file browser, right click the local directory for your fork, select `Find in Folder`, and search for the filename of the image you can find in the link that was pasted into the document. If you find the image in a different location than you expected, adjust the `Paste Image to Markdown: Path` setting until the issue is corrected. 
 - **Possible Issue:** The image was saved as expected in your directory, but the link that was pasted in the document does not seem to match the location of the image
-  - **Solution** Proceed to the next section in this step where you can validate the image link by doing a local hugo build. Keep in mind that the location where the image is saved is not the same as the location where the image will be served from. The [Hugo static site generator] will copy the image to a different location to be served on the generated modernapps.ninja/GitHub Pages website for the repo, so the saved image path and the link to the image in the document should not match exactly. If there is a different problem with the pasted link to the image in the document, adjust the `Paste Image to Markdown: Insert Pattern` setting until the issue is corrected. 
+  - **Solution** Proceed to the next section in this step where you can validate the image link by doing a local hugo build. Keep in mind that the location where the image is saved is not the same as the location where the image will be served from. The [Hugo static site generator](https://gohugo.io) will copy the image to a different location to be served on the generated modernapps.ninja/GitHub Pages website for the repo, so the saved image path and the link to the image in the document should not match exactly. If there is a different problem with the pasted link to the image in the document, adjust the `Paste Image to Markdown: Insert Pattern` setting until the issue is corrected. 
  {{< exclose >}}
 
 ##### Validate your updates prior to committing
 
-Most updates made to ModernApps Learning repositories are related to content that is displayed on a web page that is dynamically generated from markdown files where users edit content. If your desired updates are to a repository that serves a webpage, you wont be able to tell how the webpage will appear until your submitted updates are approved and Hugo builds updated versions of the webpages. When updates are merged into ModernApps Learning repositories, and automated workflow triggers hugo to build and post updated webpages that reflect the changes you made. It is usually desirable for you to be able to confirm how your updates will appear before you commit and submit updates to GitHub. 
+Most updates made to ModernApps Learning repositories are related to content that is created in markdown files which are used to automatically generate html files to present a standard webpage that is served by [GitHub Pages](https://pages.github.com/) in the https://modernapps.ninja domain. If your desired updates are to a repository that serves a webpage, you wont be able to tell how the webpage will appear until your submitted updates are approved and Hugo builds updated versions of the webpages. When updates are merged into ModernApps Learning repositories, and automated workflow triggers hugo to build and post updated webpages that reflect the changes you made. It is usually desirable for you to be able to confirm how your updates will appear when rendered in html before you commit and submit updates to GitHub. 
 
-If you have installed hugo in your local shell, it is very easy to have hugo serve the rendered webpages in a special developer mode where every time you save changes to a file, hugo automatically generates and serves updated webpages locally on your workstation. 
+If you have installed hugo in your local shell, it is very easy to have hugo serve the rendered webpages in a special development mode where every time you save changes to a file, hugo automatically generates and serves updated webpages locally on your workstation. 
 
-- From your shell command prompt, navigate to the root directory of your forked repository and enter the command `hugo server`, and hugo will start a web server on your localhost to serve a local build of the repositories webpages, and return a link to the address where you can view the local build. 
+- **Action:** In VSCode, ensure that a terminal is open. If a terminal is not open within VSCode, click on the `Terminal` pulldown menu and select `New Terminal`.
+
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-20-10-45-05.png)
+{{< exclose >}}
+
+- **Action:** From your shell command prompt, navigate to the root directory of your forked repository and enter the command `hugo server`, and hugo will start a web server on your localhost to serve a local build of the repositories webpages, and return a link to the address where you can view the local build. 
+  - **Observe** in the screenshot below, the hugo server started on localhost using port 1313, in your own environment hugo might use a different port, so make sure to use the port number listed in the output of the hugo server command in your environment. 
+
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-21-11-00-12.png)
+{{< exclose >}}
+
+
+{{< exopen "Click to expand screenshot for this action" >}}
+
+{{< exclose >}}
+
+{{< exopen "Click to expand screenshot for this action" >}}
+
+{{< exclose >}}
+
 
 #### Step 5B - Commit your updates
 
-A git commit is another tool to help prevent merge conflicts and ensure smooth operations. Any time you edit or add a file to a git repository, after you save the file, you then will use the `git add` and `git commit` commands, and git will save identifiers in version control so that it knows what changes you have made relative to the exact state of the file or repository when you made the change. 
+A git commit is another tool to help prevent merge conflicts and ensure smooth operations. Any time you edit or add a file to a git repository, after you save the file, you then will need to use the `git add FILE/DIRECTORY_NAME` and `git commit` commands, and git will save identifiers in version control so that it knows what changes you have made relative to the exact state of the file or repository when you made the change. 
 
 - From your shell command prompt, navigate to the root directory of your forked repository and enter the following commands to commit your updates:
   - # use the "git add" command to add your updated files to the staging area in your local context to mark them as ready for the next commit
