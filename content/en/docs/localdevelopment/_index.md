@@ -339,9 +339,11 @@ If you have installed hugo in your local shell, it is very easy to have hugo ser
 ![](/docs_pd6204/docs/localdevelopment/2021-05-21-11-00-12.png)
 {{< exclose >}}
 
+- **Action:** Open your web browser to the url for the local hugo server to view a locally built copy of the website for the docs repo 
+  - **Note:** If you review your local copy of the website and find that the updates you made did not come out the way you wanted them to, you can leave the hugo server running while you make updates to the content, each time you save a change to a file hugo will automatically build and serve the updated web page.
 
 {{< exopen "Click to expand screenshot for this action" >}}
-
+![](/docs_pd6204/docs/localdevelopment/2021-05-21-16-05-42.png)
 {{< exclose >}}
 
 {{< exopen "Click to expand screenshot for this action" >}}
@@ -353,12 +355,14 @@ If you have installed hugo in your local shell, it is very easy to have hugo ser
 
 A git commit is another tool to help prevent merge conflicts and ensure smooth operations. Any time you edit or add a file to a git repository, after you save the file, you then will need to use the `git add FILE/DIRECTORY_NAME` and `git commit` commands, and git will save identifiers in version control so that it knows what changes you have made relative to the exact state of the file or repository when you made the change. 
 
-- From your shell command prompt, navigate to the root directory of your forked repository and enter the following commands to commit your updates:
-  - # use the "git add" command to add your updated files to the staging area in your local context to mark them as ready for the next commit
-  - `git add .` 
-  - # enter the "git commit -m" command with a descriptive message about the update your are submitting
-  - `git commit -m "Adding file to the localdevelopment guestbook directory to complete lab exercise"`
+- **Action:** From your shell command prompt, navigate to the root directory of your forked repository and enter the following commands to commit your updates:
 
+```bash
+# use the "git add" command to add your updated files to the staging area in your local context to mark them as ready for the next commit
+git add . 
+# enter the "git commit -m" command with a descriptive message about the update your are submitting
+git commit -m "Adding file to the localdevelopment guestbook directory to complete lab exercise"
+```
 
 ### Step 6: Push your new branch to your fork on github.com
 
