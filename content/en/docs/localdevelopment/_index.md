@@ -309,15 +309,19 @@ title: "YOURGITHUBUSERNAME"
 ```
 
 {{< exopen "Click to expand screenshot for this action" >}}
-
+![](/docs_pd6204/docs/localdevelopment/2021-05-22-00-31-44.png)
 {{< exclose >}}
 
 -  **Action:**
    - In VSCode, on the 4th line of the file type in "Hello World"
    - Save your file, as it is required to save the file before the paste image extension will work
    - Expand one of the images in this document or another appropriate image, right click it and select `copy image`
-   - Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. This will paste the link to where the image file will be served in the document, and save the image file to the directory you defined in the paste image settings, `/docs_pd6204/content/en/docs/localdevelopment/guestbook/`
+   - Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. 
+   - **Note:** This will paste the link to where the image file will be served in the document, and save the image file to the directory you defined in the `Path` property of the `Paste Image in Markdown` extension settings.
 
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-22-00-32-56.png)
+{{< exclose >}}
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-21-17-28-03.png)
 {{< exclose >}}
@@ -374,22 +378,36 @@ git commit -m "Adding file to the localdevelopment guestbook directory to comple
 ```
 
 {{< exopen "Click to expand screenshot for this action" >}}
-
+![](/docs_pd6204/docs/localdevelopment/2021-05-22-00-39-05.png)
 {{< exclose >}}
 
 ### Step 6: Push your new branch to your fork on github.com
 
 Now that you have committed your updates locally, you can push the updates to your forked repository on github. While you will open a pull request to submit your changes to the upstream repository, since you are the owner of your own fork, you are allowed to push updates to your fork. After you push your updates to your fork on github, you can submit a pull request through the browser. 
 
-- **Action:** From your shell command prompt, **navigate to the root directory** of your forked repository `/docs_pd6204/` and enter `git push`
+- **Action:** From your shell command prompt, **navigate to the root directory** of your forked repository `/docs_pd6204/`, enter `git branch` to confirm your branch name, and then enter `git push origin BRANCH_NAME` replacing BRANCH_NAME with the name of your branch.
+  - **Observe:** The output of the `git push` command provides the exact GitHub URL you will need to go to in your browser to open the pull request to submit your updates to the upstream repo, as shown in the screenshot below. 
 
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-22-00-49-22.png)
+{{< exclose >}}
 
 ### Step 7: Create pull request to submit your proposed changes
 
 
-In a browser, navigate to the github.com webpage for your fork of the upstream repository. On the home page, a text alert will display that you have made changes and promtp you to open a pull request to submit your changes, and you can follow the prompts to open a pull request in the browser, using the exact sequence used in the ModernApps Skills 101 course and all of the other courses that are hosted on GitHub. 
+- **Action:** In a browser, navigate to the URL provided in the output of the `git push` command in the previous step, and click `Create pull request`.
 
-**This completes the exercise"
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-22-00-53-27.png)
+{{< exclose >}}
+
+- **Action:** Your browser should automatically redirect to the pull request page on the upstream repo for the pull request you opened in the previous action. Your pull request has now been submitted. At this point you will need to wait for an admin to approve the merge before your updates will be merged into the main repository.
+
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-22-00-58-09.png)
+{{< exclose >}}
+
+**This completes the exercise**
 
 
 
