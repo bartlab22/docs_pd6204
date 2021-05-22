@@ -199,7 +199,7 @@ The main principle you should keep in mind when updating files on a repository i
 
 Git provides several tools you can use to help ensure that git's version control process works smoothly, including features like branches and commits. When you create a branch, git creates a logical space to keep files you modify seperate from files you have not modified in your fork of the repository.  
 
-**Important:** Your branch name does need to be unique in your fork, and you should be careful to not accidentally use a branch that already existed as you may accidentally include unintended updates in your commits. It is easy to make this mistake as its natural to use the same or similar names for temporary branches. So it is important to check what branches exist before creating one, deleting old branches after they are merged or closed, and I also append a random or semi-random number to temporary branch as an extra precaution to make sure I dont accidentally reuse an old branch that may still be waiting to merge or forgot to delete. One other consideration is that while branches are local to your fork, there may be times where you are working on a common fork with other people, so it is a good habit to include your username or something unique to you. 
+**Important:** Your branch name does need to be unique in your fork, so it is important to check what branches exist before creating one, deleting old branches after they are merged or closed, and I also append a random or semi-random number to temporary branch as an extra precaution to make sure I dont accidentally reuse an old branch that may still be waiting to merge or forgot to delete. One other consideration is that while branches are local to your fork, there may be times where you are working on a common fork with other people, so it is a good habit to include your username or something unique to you. 
 
 - **Action:** From your shell command prompt, ensure your prompt is set to the directory for your forked repository and enter the following commands - be careful to replace "YOURGITHUBUSERNAME" with your gitub username:
 
@@ -278,8 +278,8 @@ There are several extensions that use this second method, and it doesnt matter w
     - **Explanation:** By default this field populates variables intended to dynamically reflect an accurate path in the `Insert Pattern` field, but I have had a difficult time getting it to work consistently so I leave it blank and instead insert a static path into the `Insert Pattern` field as shown below. 
   - **Field Name:** `Paste Image to Markdown: Insert Pattern`
     - **Important:** In the following field value, **replace the string "YOURLOWERCASEGITHUBUSERNAME" with your github username in all lower case letters**
-    - **Field Value:** {{< highlight-open "whitesmoke" >}}{{< nobr-open >}}${imageSyntaxPrefix}/docs_pd6204/docs/localdevelopment/guestbookdir/YOURLOWERCASEGITHUBUSERNAME/${imageFileName}${imageSyntaxSuffix}{{< nobr-close >}}{{< highlight-close >}}
-    - **Explanation:** This field provides the pasted link in the document to where the image will be served, but does not define the location where the image will be saved. The imageSyntaxPrefix and suffix insert the required formatting to display images in markdown. The "/docs_pd6204/docs/localdevelopment/guestbookdir/" is the URL path to directory the image will be served from, and the imageFilename is a variable that will insert the dynamically generated name of the image file that gets created when you paste the image in the document. In the following steps in this example, you will be creating a document that will be saved as the only document in a folder, and the image will be saved within the same directory as the document. With this method where images are saved in the same folder as the document, you will need to update this setting every time you edit a different document to ensure the pasted image link accurately reflects where the image is stored. A key advantage of this method is that it keeps the images used in a document associated with that document, making the document portable and free from complicated dependencies such as dedicated image directories where it can be very difficult to tell which image is associated with which document.
+    - **Field Value:** {{< highlight-open "whitesmoke" >}}{{< nobr-open >}}${imageSyntaxPrefix}/docs_pd6204/docs/localdevelopment/guestbook/YOURLOWERCASEGITHUBUSERNAME/${imageFileName}${imageSyntaxSuffix}{{< nobr-close >}}{{< highlight-close >}}
+    - **Explanation:** This field provides the pasted link in the document to where the image will be served, but does not define the location where the image will be saved. The imageSyntaxPrefix and suffix insert the required formatting to display images in markdown. The "/docs_pd6204/docs/localdevelopment/guestbook/" is the URL path to directory the image will be served from, and the imageFilename is a variable that will insert the dynamically generated name of the image file that gets created when you paste the image in the document. In the following steps in this example, you will be creating a document that will be saved as the only document in a folder, and the image will be saved within the same directory as the document. With this method where images are saved in the same folder as the document, you will need to update this setting every time you edit a different document to ensure the pasted image link accurately reflects where the image is stored. A key advantage of this method is that it keeps the images used in a document associated with that document, making the document portable and free from complicated dependencies such as dedicated image directories where it can be very difficult to tell which image is associated with which document.
   - **Field Name:** `Paste Image to Markdown: Name Prefix`
     - **Field Value:** `/`
   - **Field Name:** `Paste Image to Markdown: Path`
@@ -292,7 +292,7 @@ There are several extensions that use this second method, and it doesnt matter w
 
 This example is designed to allow you to create and submit a file to allow you to walk through the entire local development process in a safe environment before you need to try using this method to update production assets.
 
-- **Action:** From your shell command prompt, navigate to the following directory within your local copy of your fork: {{< highlight-open "whitesmoke" >}}{{< nobr-open >}}`/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`{{< nobr-close >}}{{< highlight-close >}}
+- **Action:** From your shell command prompt, navigate to the following directory within your local copy of your fork: {{< highlight-open "whitesmoke" >}}{{< nobr-open >}}`/docs_pd6204/content/en/docs/localdevelopment/guestbook/`{{< nobr-close >}}{{< highlight-close >}}
   - Observe that this directory path includes the folders "/content/en" which is not included in the `Insert Pattern` setting in the `Paste Image to Markdown` extension. this is because while the image is saved to your current directory, 
   - Create a directory using the name of **your github username in lower case letters** with the command `mkdir YOURLOWERCASEGITHUBUSERNAME`
   - Navigate to the new directory with the command `cd YOURLOWERCASEGITHUBUSERNAME`
@@ -305,9 +305,13 @@ This example is designed to allow you to create and submit a file to allow you t
 
 -  **Action:**
    - Using the VSCode editor, on the first line of the new file enter the text "Hello World"
+   - Save your file, as it is required to save the file before the paste image extension will work
    - Expand one of the images in this document or another appropriate image, right click it and select `copy image`
-   - Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. This will paste the link to where the image file will be served in the document, and save the image file to the directory you defined in the paste image settings, `/docs_pd6204/content/en/docs/localdevelopment/guestbookdir/`
+   - Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. This will paste the link to where the image file will be served in the document, and save the image file to the directory you defined in the paste image settings, `/docs_pd6204/content/en/docs/localdevelopment/guestbook/`
 
+{{< exopen "Click to expand screenshot for this action" >}}
+![](/docs_pd6204/docs/localdevelopment/2021-05-21-17-28-03.png)
+{{< exclose >}}
 {{< exopen "Click to expand if your image did not paste correctly" >}}
 If you did not see a link to the image get pasted in your document, or if you do not see the image file being saved to its target location in your directory, please review the following list for resolutions to common problems.
 - **Possible Issue:** The keyboard shortcut used in this example might not work the same on your system
@@ -339,17 +343,12 @@ If you have installed hugo in your local shell, it is very easy to have hugo ser
 ![](/docs_pd6204/docs/localdevelopment/2021-05-21-11-00-12.png)
 {{< exclose >}}
 
-- **Action:** Open your web browser to the url for the local hugo server to view a locally built copy of the website for the docs repo 
+- **Action:** Open your web browser to the url for the local hugo server to view a locally built copy of the website for the docs repo. Navigate to the URL of the file you created
   - **Note:** If you review your local copy of the website and find that the updates you made did not come out the way you wanted them to, you can leave the hugo server running while you make updates to the content, each time you save a change to a file hugo will automatically build and serve the updated web page.
 
 {{< exopen "Click to expand screenshot for this action" >}}
 ![](/docs_pd6204/docs/localdevelopment/2021-05-21-16-05-42.png)
 {{< exclose >}}
-
-{{< exopen "Click to expand screenshot for this action" >}}
-
-{{< exclose >}}
-
 
 #### Step 5B - Commit your updates
 
@@ -363,6 +362,10 @@ git add .
 # enter the "git commit -m" command with a descriptive message about the update your are submitting
 git commit -m "Adding file to the localdevelopment guestbook directory to complete lab exercise"
 ```
+
+{{< exopen "Click to expand screenshot for this action" >}}
+
+{{< exclose >}}
 
 ### Step 6: Push your new branch to your fork on github.com
 
