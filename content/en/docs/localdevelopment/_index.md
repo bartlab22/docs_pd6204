@@ -354,10 +354,11 @@ If you have installed hugo in your local shell, it is very easy to have hugo ser
 
 A git commit is another tool to help prevent merge conflicts and ensure smooth operations. Any time you edit or add a file to a git repository, after you save the file, you then will need to use the `git add FILE/DIRECTORY_NAME` and `git commit` commands, and git will save identifiers in version control so that it knows what changes you have made relative to the exact state of the file or repository when you made the change. 
 
-- **Action:** From your shell command prompt, navigate to the root directory of your forked repository and enter the following commands to commit your updates:
+- **Action:** From your shell command prompt, ensure you are in the `/docs_pd6204/content/en/docs/localdevelopment/guestbook/` directory and enter the following commands to commit your updates:
 
 ```bash
 # use the "git add" command to add your updated files to the staging area in your local context to mark them as ready for the next commit
+## The "." in the "git add ." command indicates git will commit every new or modified file in the current directory and any child directories will be added
 git add . 
 # enter the "git commit -m" command with a descriptive message about the update your are submitting
 git commit -m "Adding file to the localdevelopment guestbook directory to complete lab exercise"
@@ -371,7 +372,14 @@ git commit -m "Adding file to the localdevelopment guestbook directory to comple
 
 Now that you have committed your updates locally, you can push the updates to your forked repository on github. While you will open a pull request to submit your changes to the upstream repository, since you are the owner of your own fork, you are allowed to push updates to your fork. After you push your updates to your fork on github, you can submit a pull request through the browser. 
 
-- From your shell command prompt, navigate to the root directory of your forked repository, enter the command `git branch` to verify the name, spelling and capitalization of your branch name. Next enter `git push YOURGITHUBUSERNAME_new_branch_4321` being sure to replace the value YOURGITHUBUSERNAME with your own github username. 
+- From your shell command prompt, **navigate to the root directory** of your forked repository `/docs_pd6204/` and enter the following commands:
+
+```bash
+# Enter the "git branch" command to to verify the name, spelling and capitalization of your branch name.
+git branch
+# Enter the "git push" command to push your update to your fork of the repo on github
+git push
+``` 
 
 ### Step 7: Create pull request to submit your proposed changes
 
