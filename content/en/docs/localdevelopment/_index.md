@@ -1,6 +1,6 @@
 ---
 title: "Making updates from your workstation with VSCode"
-linkTitle: "Desktop Editing with VSCode"
+linkTitle: "Editing with VSCode"
 weight: 20
 menu:
   main:
