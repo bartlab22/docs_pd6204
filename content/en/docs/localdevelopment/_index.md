@@ -293,18 +293,27 @@ There are several extensions that use this second method, and it doesnt matter w
 This example is designed to allow you to create and submit a file to allow you to walk through the entire local development process in a safe environment before you need to try using this method to update production assets.
 
 - **Action:** From your shell command prompt, navigate to the following directory within your local copy of your fork: {{< highlight-open "whitesmoke" >}}{{< nobr-open >}}`/docs_pd6204/content/en/docs/localdevelopment/guestbook/`{{< nobr-close >}}{{< highlight-close >}}
-  - Observe that this directory path includes the folders "/content/en" which is not included in the `Insert Pattern` setting in the `Paste Image to Markdown` extension. this is because while the image is saved to your current directory, 
-  - Create a directory using the name of **your github username in lower case letters** with the command `mkdir YOURLOWERCASEGITHUBUSERNAME`
-  - Navigate to the new directory with the command `cd YOURLOWERCASEGITHUBUSERNAME`
   - Create a file with vscode using the name of **your github username in lower case letters** and the `.md` extension with the command `code YOURLOWERCASEGITHUBUSERNAME.md`
   - Observe that VSCode opened the new file you created in the previous command in its editor window
 
 {{< exopen "Click to expand screenshot for this action" >}}
-![](/docs_pd6204/docs/localdevelopment/2021-05-20-02-13-16.png)
+![](/docs_pd6204/docs/localdevelopment/2021-05-22-00-13-06.png)
+{{< exclose >}}
+
+- **Action:** Using the VSCode editor, paste the following text into the new file you created in the previous action and replace the string "YOURGITHUBUSERNAME with your GitHub username:
+
+```bash
+---
+title: "YOURGITHUBUSERNAME"
+---
+```
+
+{{< exopen "Click to expand screenshot for this action" >}}
+
 {{< exclose >}}
 
 -  **Action:**
-   - Using the VSCode editor, on the first line of the new file enter the text "Hello World"
+   - In VSCode, on the 4th line of the file type in "Hello World"
    - Save your file, as it is required to save the file before the paste image extension will work
    - Expand one of the images in this document or another appropriate image, right click it and select `copy image`
    - Using the VSCode editor, place your cursor on the second line of the new file you created, and press the keyboard shortcut `ctrl + alt + v` to paste the image to your repo using the `Paste Image to Markdown` extension. This will paste the link to where the image file will be served in the document, and save the image file to the directory you defined in the paste image settings, `/docs_pd6204/content/en/docs/localdevelopment/guestbook/`
@@ -372,14 +381,8 @@ git commit -m "Adding file to the localdevelopment guestbook directory to comple
 
 Now that you have committed your updates locally, you can push the updates to your forked repository on github. While you will open a pull request to submit your changes to the upstream repository, since you are the owner of your own fork, you are allowed to push updates to your fork. After you push your updates to your fork on github, you can submit a pull request through the browser. 
 
-- From your shell command prompt, **navigate to the root directory** of your forked repository `/docs_pd6204/` and enter the following commands:
+- **Action:** From your shell command prompt, **navigate to the root directory** of your forked repository `/docs_pd6204/` and enter `git push`
 
-```bash
-# Enter the "git branch" command to to verify the name, spelling and capitalization of your branch name.
-git branch
-# Enter the "git push" command to push your update to your fork of the repo on github
-git push
-``` 
 
 ### Step 7: Create pull request to submit your proposed changes
 
